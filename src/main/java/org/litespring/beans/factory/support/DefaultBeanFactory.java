@@ -5,7 +5,8 @@ import org.litespring.beans.factory.BeanFactory;
 
 public class DefaultBeanFactory implements BeanFactory {
 
-    public DefaultBeanFactory(String s) {
+    public DefaultBeanFactory(String configFile) {
+
     }
 
     public BeanDefinition getBeanDefinition(String petStore) {
