@@ -15,13 +15,9 @@ import org.litespring.beans.factory.BeanFactory;
 import org.litespring.util.ClassUtils;
 
 public class DefaultBeanFactory implements BeanFactory {
-
     public static final String ID_ATTRIBUTE = "id";
-
     public static final String CLASS_ATTRIBUTE = "class";
-
     private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>(64);
-
 
     public DefaultBeanFactory(String configFile) {
         loadBeanDefinition(configFile);
@@ -57,12 +53,9 @@ public class DefaultBeanFactory implements BeanFactory {
                 }
             }
         }
-
-
     }
 
     public BeanDefinition getBeanDefinition(String beanID) {
-
         return this.beanDefinitionMap.get(beanID);
     }
 
@@ -79,13 +72,10 @@ public class DefaultBeanFactory implements BeanFactory {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
-
             e.printStackTrace();
         } catch (IllegalAccessException e) {
-
             e.printStackTrace();
         }
-
         return null;
     }
 
