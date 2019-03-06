@@ -18,9 +18,9 @@ public class ApplicationContextTest {
     @Test
     public void testGetBeanFromFileSystemContext(){
         // hardcode path
-		/*ApplicationContext ctx = new FileSystemXmlApplicationContext("");
+		ApplicationContext ctx = new FileSystemXmlApplicationContext("src/test/resources/petstore-v1.xml");
 		PetStoreService petStore = (PetStoreService)ctx.getBean("petStore");
-		Assert.assertNotNull(petStore);*/
+		Assert.assertNotNull(petStore);
 
     }
 
