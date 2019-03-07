@@ -21,6 +21,7 @@ public class PropertyValue {
     public Object getValue() {
         return this.value;
     }
+
     public synchronized boolean isConverted() {
         return this.converted;
     }
