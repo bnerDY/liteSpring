@@ -9,7 +9,9 @@
 
         <property name="accountDao" ref="accountDao"/>
         <property name="itemDao" ref="itemDao"/>
-        <property name="owner" value="liuxin"/>
+        <property name="owner" value="xxx"/>
+        <property name="version"  value="2"/>
+
     </bean>
 
     <bean id="accountDao"  class="org.litespring.dao.v2.AccountDao">
