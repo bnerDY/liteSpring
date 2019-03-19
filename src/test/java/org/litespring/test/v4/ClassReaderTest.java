@@ -11,6 +11,7 @@ import org.litespring.core.type.classreading.ClassMetadataReadingVisitor;
 import org.springframework.asm.ClassReader;
 
 
+
 public class ClassReaderTest {
 
 	@Test
@@ -30,23 +31,23 @@ public class ClassReaderTest {
 		Assert.assertEquals(0, visitor.getInterfaceNames().length);
 	}
 
-    @Test
-    public void testGetAnnonation() throws Exception {
-        ClassPathResource resource = new ClassPathResource("org/litespring/service/v4/PetStoreService.class");
-        ClassReader reader = new ClassReader(resource.getInputStream());
+	@Test
+	public void testGetAnnonation() throws Exception{
+		ClassPathResource resource = new ClassPathResource("org/litespring/service/v4/PetStoreService.class");
+		ClassReader reader = new ClassReader(resource.getInputStream());
 
-        AnnotationMetadataReadingVisitor visitor = new AnnotationMetadataReadingVisitor();
+		AnnotationMetadataReadingVisitor visitor = new AnnotationMetadataReadingVisitor();
 
-        reader.accept(visitor, ClassReader.SKIP_DEBUG);
+		reader.accept(visitor, ClassReader.SKIP_DEBUG);
 
-        String annotation = "org.litespring.stereotype.Component";
-        Assert.assertTrue(visitor.hasAnnotation(annotation));
+		String annotation = "org.litespring.stereotype.Component";
+		Assert.assertTrue(visitor.hasAnnotation(annotation));
 
-        AnnotationAttributes attributes = visitor.getAnnotationAttributes(annotation);
+		AnnotationAttributes attributes = visitor.getAnnotationAttributes(annotation);
 
-        Assert.assertEquals("petStore", attributes.get("value"));
+		Assert.assertEquals("petStore", attributes.get("value"));
 
-    }
+	}
 
 
 }
